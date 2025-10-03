@@ -10,17 +10,21 @@ public class DatosUsuario {
          String nombre = sc.nextLine();
          System.out.println("Tu edad: " );
          int edad = sc.nextInt();
+         sc.nextLine();
          System.out.println("Tu email:"  );
+          
          String correo = sc.nextLine();
-         String gmail = sc.nextLine();
-         boolean emailValido = ProcesadorTexto.esEmailValido(gmail);
+         boolean emailValido = ProcesadorTexto.esEmailValido(correo);
          if(emailValido){
-            System.out.println("Tu email es válido");
+
+         System.out.println("El usuario si puede ser creado porque es válido");
          }else{
-            System.out.println("Tu email NO es válido");
+         System.out.println("El usuario no puede ser creado porque no es válido");
          }
-            sc.close();
+
+         sc.close();
         }
 }
 
-
+  
+ 
