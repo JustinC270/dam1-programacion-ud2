@@ -7,7 +7,7 @@ public class GestorTareas {
         // Crea un método llamado que muestre un mensaje de bienvenida al programa.
         // No necesita devolver nada, solo imprimir por consola.
         // Tu código aquí ↓
-        bienvenida(" Alonso");
+        mostrarBienvenida();
      
         // ================================
         // EJERCICIO 2: Duración total
@@ -16,8 +16,8 @@ public class GestorTareas {
         // y devuelva el total de minutos.
         // Llama al método con 45 y 30 y muestra el resultado en consola.
          // Tu código aquí ↓
-            int total=minutos(45, 30);
-            System.out.println(total);
+            int total = calculadoraDuracionTotal(45, 30);
+            System.out.println("Duracion total: " + total + " minutos");
 
         // ================================
         // EJERCICIO 3: Conversión de tiempo
@@ -26,9 +26,8 @@ public class GestorTareas {
         // y muestre en pantalla cuántas horas y minutos son.
         // Ejemplo: 150 minutos → "Son 2 horas y 30 minutos".
         // No tiene que devolver nada.
-
         // Tu código aquí ↓
-
+        mostrarHorasYMinutos(150);
 
         // ================================
         // EJERCICIO 4: Recordatorios
@@ -39,6 +38,7 @@ public class GestorTareas {
         // Solo muestra el mensaje, no devuelve nada.
 
         // Tu código aquí ↓
+        mostrarRecordatorio("Revisar correo", 2);
 
         // ================================
         // EJERCICIO 5: Estado de tareas
@@ -49,6 +49,8 @@ public class GestorTareas {
         // Muestra el resultado de llamar al método con ambos casos.
 
         // Tu código aquí ↓
+        System.out.println("Tarea 1: " +  obtenerEstado(true));
+        System.out.println("Tarea 2: " + obtenerEstado(false));
 
         // ================================
         // EJERCICIO 6: Productividad
@@ -85,31 +87,28 @@ public class GestorTareas {
 
     // Aquí debéis crear los métodos fuera del main ↓↓↓
     // 1
-    public static void bienvenida(String nombre) {
-        System.out.println("Bienvenido" + nombre);
+    public static void mostrarBienvenida() {
+        System.out.println("Bienvenido" );
     }
 
     // 2
-     int a = 45;
-     int b = 30;
-     public static int minutos(int a, int b) {
-        return (a +b);
+     public static int calculadoraDuracionTotal(int tarea1, int tarea2){
+        return tarea1 + tarea2;
     }
-
     // 3
-    public static void cantidad(int tiempo) {
-        
-
+    public static void mostrarHorasYMinutos(int minutos) {
+        int horas = minutos / 60;
+        int resto = minutos % 60;
+        System.out.println(minutos+ " minutos son " + horas + " horas y " + resto + " minutos. ");
     }
-
+    //4
+    public static void mostrarRecordatorio(String tarea, int prioridad){
+        System.out.println(" [Prioridad " + prioridad + "] " + tarea);
+    }
     // 5
-    public static boolean Completada(boolean tarea) {
-        if (tarea) {
-            System.out.println("Completado");
-            return (tarea);
-        } else {
-            System.out.println("Pendiente");
-            return (tarea);
-        }
-    }
+    public static String obtenerEstado(boolean completada) {
+}
+    //6
+    public static
+
 }
