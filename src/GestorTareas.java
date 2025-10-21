@@ -8,16 +8,16 @@ public class GestorTareas {
         // No necesita devolver nada, solo imprimir por consola.
         // Tu código aquí ↓
         mostrarBienvenida();
-     
+
         // ================================
         // EJERCICIO 2: Duración total
         // ================================
         // Crea un método que reciba la duración (en minutos) de dos tareas
         // y devuelva el total de minutos.
         // Llama al método con 45 y 30 y muestra el resultado en consola.
-         // Tu código aquí ↓
-            int total = calculadoraDuracionTotal(45, 30);
-            System.out.println("Duracion total: " + total + " minutos");
+        // Tu código aquí ↓
+        int total = calculadoraDuracionTotal(45, 30);
+        System.out.println("Duracion total: " + total + " minutos");
 
         // ================================
         // EJERCICIO 3: Conversión de tiempo
@@ -49,8 +49,9 @@ public class GestorTareas {
         // Muestra el resultado de llamar al método con ambos casos.
 
         // Tu código aquí ↓
-        System.out.println("Tarea 1: " +  obtenerEstado(true));
+        System.out.println("Tarea 1: " + obtenerEstado(true));
         System.out.println("Tarea 2: " + obtenerEstado(false));
+
 
         // ================================
         // EJERCICIO 6: Productividad
@@ -60,6 +61,9 @@ public class GestorTareas {
         // Muestra el resultado en consola.
 
         // Tu código aquí ↓
+        System.out.println("[Ejercicio 6]");
+        double porcentajeTareasCompletadas = tareasCompletadas(7, 10);
+        System.out.printf("Tareas completadas: %.2f%%", porcentajeTareasCompletadas);
 
         // ================================
         // EJERCICIO 7: Sobrecarga
@@ -72,6 +76,9 @@ public class GestorTareas {
         // Llama a ambos desde main.
 
         // Tu código aquí ↓
+        System.out.println("[Ejercicio 7]");
+        saludo("crack");
+        saludo("crack", 7);
 
         // ================================
         // EJERCICIO 8: Bonus - Planificación
@@ -82,33 +89,63 @@ public class GestorTareas {
         // Muestra el texto en pantalla.
 
         // Tu código aquí ↓
+        System.out.println("[Ejercicio 8]");
+        mostrarTareasYDuracion("limpiar tareas", 150);
 
     }
 
     // Aquí debéis crear los métodos fuera del main ↓↓↓
     // 1
     public static void mostrarBienvenida() {
-        System.out.println("Bienvenido" );
+        System.out.println("Bienvenido");
     }
 
     // 2
-     public static int calculadoraDuracionTotal(int tarea1, int tarea2){
+    public static int calculadoraDuracionTotal(int tarea1, int tarea2) {
         return tarea1 + tarea2;
     }
+
     // 3
     public static void mostrarHorasYMinutos(int minutos) {
         int horas = minutos / 60;
         int resto = minutos % 60;
-        System.out.println(minutos+ " minutos son " + horas + " horas y " + resto + " minutos. ");
+        System.out.println(minutos + " minutos son " + horas + " horas y " + resto + " minutos. ");
     }
+
     //4
-    public static void mostrarRecordatorio(String tarea, int prioridad){
+    public static void mostrarRecordatorio(String tarea, int prioridad) {
         System.out.println(" [Prioridad " + prioridad + "] " + tarea);
     }
+
     // 5
     public static String obtenerEstado(boolean completada) {
-}
-    //6
-    public static
+        if (completada) {
+            return "Completada";
+        } else {
+            return "Pendiente";
+        }
+    }
+
+    //Ejercicio 6
+    public static double tareasCompletadas(int tareasCompletadas, int totalTareas) {
+        return tareasCompletadas * 100.00 / totalTareas;
+    }
+
+    // Ejercicio 7
+    public static void saludo(String nombre) {
+        System.out.println("Hola " + nombre);
+    }
+
+    public static void saludo(String nombre, int tareasCompletadas) {
+        System.out.println("Hola " + nombre + " has completado " + tareasCompletadas + " tareas");
+    }
+
+    public static void mostrarTareasYDuracion(String nombre, int totalMinutos) {
+        int horas = totalMinutos / 60;
+        int minutos = totalMinutos % 60;
+        System.out.println("Tiempo: " + horas + " minutos: " + minutos);
+        System.out.printf("La tarea %s durará aproximadamente %d horas y %d minutos.", nombre,
+                horas, minutos);
+    }
 
 }
